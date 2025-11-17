@@ -1,0 +1,141 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNKSwtHvCWe3PjXydrD9ZlC",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/gonzalezmarielismilagros-ai/tech-horizons-2025/blob/main/Merca%20Panam%C3%A1%20DataFrame\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "nombres = [\"zanahoria\", \"brócoli\", \"espinaca\", \"lechuga\", \"tomate\", \"pepino\", \"cebolla\", \"ajo\",\n",
+        "    \"papa\", \"coliflor\", \"calabaza\", \"pimiento\", \"remolacha\", \"col\", \"apio\", \"champiñón\",\n",
+        "    \"berenjena\", \"chícharo\", \"espárrago\", \"acelga\"]\n",
+        "\n",
+        "pesos = [120, 250, 80, 200, 150, 180, 220, 50,\n",
+        "    300, 400, 500, 350, 270, 450, 220, 100,\n",
+        "    320, 90, 150, 110]\n",
+        "\n",
+        "categoría = [\"raíz\", \"flor\", \"hoja\", \"hoja\", \"fruto\", \"fruto\", \"bulbo\", \"bulbo\",\n",
+        "    \"raíz\", \"flor\", \"fruto\", \"fruto\", \"raíz\", \"hoja\", \"tallo\", \"hongo\",\n",
+        "    \"fruto\", \"semilla\", \"tallo\", \"hoja\"]\n",
+        "\n",
+        "calidad = [\"alta\", \"alta\", \"media\", \"alta\", \"alta\", \"media\", \"alta\", \"alta\",\n",
+        "    \"media\", \"alta\", \"alta\", \"alta\", \"media\", \"alta\", \"media\", \"alta\",\n",
+        "    \"media\", \"alta\", \"alta\", \"media\"]\n",
+        "\n",
+        "origen = [\"panamá\", \"chile\", \"perú\", \"colombia\", \"méxico\", \"panamá\", \"colombia\", \"china\",\n",
+        "    \"panamá\", \"méxico\", \"perú\", \"españa\", \"panamá\", \"colombia\", \"méxico\", \"chile\",\n",
+        "    \"panamá\", \"méxico\", \"perú\", \"panamá\"]\n",
+        "\n",
+        "precios = [0.80, 1.50, 1.20, 0.90, 1.10, 0.95, 0.70, 0.60,\n",
+        "    1.00, 1.40, 2.00, 1.30, 1.10, 0.85, 0.75, 2.50,\n",
+        "    1.80, 1.20, 2.20, 1.00]\n",
+        "\n",
+        "disponible = [\"sí\", \"sí\", \"sí\", \"sí\", \"sí\", \"sí\", \"sí\", \"sí\",\n",
+        "    \"sí\", \"sí\", \"no\", \"sí\", \"sí\", \"sí\", \"sí\", \"sí\",\n",
+        "    \"sí\", \"sí\", \"no\", \"sí\"]\n",
+        "\n",
+        "descuento = [5, 10, 0, 15, 0, 20, 10, 5,\n",
+        "    0, 10, 0, 5, 10, 0, 5, 10,\n",
+        "    0, 5, 0, 10]\n",
+        "\n",
+        "df_vegetales = pd.DataFrame({\n",
+        "    \"nombre\": nombres,\n",
+        "    \"peso (g)\": pesos,\n",
+        "    \"categoría\": categoría,\n",
+        "    \"calidad\": calidad,\n",
+        "    \"origen\": origen,\n",
+        "    \"precio ($)\": precios,\n",
+        "    \"disponible\": disponible,\n",
+        "    \"descuento (%)\": descuento\n",
+        "})\n",
+        "\n",
+        "print(\"Merca Panamá\")\n",
+        "print(df_vegetales)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qrH7Dhp0q9JO",
+        "outputId": "de81cf94-d554-4887-e25e-a7599c60a8cd"
+      },
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Merca Panamá\n",
+            "       nombre  peso (g) categoría calidad    origen  precio ($) disponible  \\\n",
+            "0   zanahoria       120      raíz    alta    panamá        0.80         sí   \n",
+            "1     brócoli       250      flor    alta     chile        1.50         sí   \n",
+            "2    espinaca        80      hoja   media      perú        1.20         sí   \n",
+            "3     lechuga       200      hoja    alta  colombia        0.90         sí   \n",
+            "4      tomate       150     fruto    alta    méxico        1.10         sí   \n",
+            "5      pepino       180     fruto   media    panamá        0.95         sí   \n",
+            "6     cebolla       220     bulbo    alta  colombia        0.70         sí   \n",
+            "7         ajo        50     bulbo    alta     china        0.60         sí   \n",
+            "8        papa       300      raíz   media    panamá        1.00         sí   \n",
+            "9    coliflor       400      flor    alta    méxico        1.40         sí   \n",
+            "10   calabaza       500     fruto    alta      perú        2.00         no   \n",
+            "11   pimiento       350     fruto    alta    españa        1.30         sí   \n",
+            "12  remolacha       270      raíz   media    panamá        1.10         sí   \n",
+            "13        col       450      hoja    alta  colombia        0.85         sí   \n",
+            "14       apio       220     tallo   media    méxico        0.75         sí   \n",
+            "15  champiñón       100     hongo    alta     chile        2.50         sí   \n",
+            "16  berenjena       320     fruto   media    panamá        1.80         sí   \n",
+            "17   chícharo        90   semilla    alta    méxico        1.20         sí   \n",
+            "18  espárrago       150     tallo    alta      perú        2.20         no   \n",
+            "19     acelga       110      hoja   media    panamá        1.00         sí   \n",
+            "\n",
+            "    descuento (%)  \n",
+            "0               5  \n",
+            "1              10  \n",
+            "2               0  \n",
+            "3              15  \n",
+            "4               0  \n",
+            "5              20  \n",
+            "6              10  \n",
+            "7               5  \n",
+            "8               0  \n",
+            "9              10  \n",
+            "10              0  \n",
+            "11              5  \n",
+            "12             10  \n",
+            "13              0  \n",
+            "14              5  \n",
+            "15             10  \n",
+            "16              0  \n",
+            "17              5  \n",
+            "18              0  \n",
+            "19             10  \n"
+          ]
+        }
+      ]
+    }
+  ]
+}
